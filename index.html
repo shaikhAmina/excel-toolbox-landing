@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Excel Toolbox — Free Online Excel & Data Tools</title>
+  <meta name="description" content="Free online tools to merge Excel files, split Excel, run VLOOKUP, find duplicates, convert JSON to Excel, format numbers and strings. No sign-up. Files never uploaded to any server." />
+  <meta name="keywords" content="merge excel online, split excel file, vlookup tool online, find duplicates excel, json to excel converter, excel to json, number formatter excel, free excel tools, data cleaning tools" />
+  <meta name="author" content="Excel Toolbox" />
+  <link rel="canonical" href="https://shaikhamina.github.io/excel-toolbox-landing/" />
+
+  <!-- Open Graph (for sharing on social media) -->
+  <meta property="og:title" content="Excel Toolbox — Free Online Excel & Data Tools" />
+  <meta property="og:description" content="Merge, split, VLOOKUP, find duplicates, convert JSON to Excel and more. Free, no sign-up required." />
+  <meta property="og:url" content="https://shaikhamina.github.io/excel-toolbox-landing/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://shaikhamina.github.io/excel-toolbox-landing/og-image.png" />
+
+  <!-- Google Search Console verification — will be added after GitHub Pages is live -->
+  <!-- <meta name="google-site-verification" content="REPLACE_WITH_YOUR_CODE" /> -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #1a7f5a;
+      --green-dark: #155c42;
+      --text:       #1a202c;
+      --muted:      #4a5568;
+      --light:      #f7fafc;
+      --border:     #e2e8f0;
+      --card-bg:    #ffffff;
+    }
+
+    body {
+      font-family: 'Segoe UI', Inter, sans-serif;
+      color: var(--text);
+      background: var(--light);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: #fff;
+      border-bottom: 2px solid var(--border);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo { font-size: 1.4rem; font-weight: 800; color: var(--green); text-decoration: none; }
+    .nav-logo span { color: var(--text); }
+    .nav-cta {
+      background: var(--green);
+      color: #fff;
+      padding: 9px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--green-dark); }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 60px;
+      background: linear-gradient(160deg, #f0fff8 0%, #ffffff 60%);
+    }
+    .hero h1 {
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 18px;
+      line-height: 1.2;
+    }
+    .hero h1 span { color: var(--green); }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 580px;
+      margin: 0 auto 32px;
+    }
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .badge {
+      background: #ebf8f1;
+      color: var(--green);
+      border: 1px solid #c6f6e0;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .hero-btn {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      padding: 16px 40px;
+      border-radius: 10px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 14px rgba(26,127,90,0.3);
+    }
+    .hero-btn:hover { background: var(--green-dark); transform: translateY(-2px); }
+    .hero-sub { margin-top: 14px; font-size: 0.85rem; color: #718096; }
+
+    /* ── SECTION ── */
+    section { padding: 60px 24px; }
+    .section-inner { max-width: 1080px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .section-desc { color: var(--muted); max-width: 540px; margin-bottom: 40px; }
+
+    /* ── TOOL CARDS ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      border-color: #a0aec0;
+      transform: translateY(-3px);
+    }
+    .card-icon { font-size: 2rem; line-height: 1; }
+    .cat-badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+    .cat-excel   { background: #ebf8f1; color: #276749; }
+    .cat-convert { background: #ebf4ff; color: #2b6cb0; }
+    .cat-clean   { background: #fef3c7; color: #92400e; }
+    .card h3 { font-size: 1rem; font-weight: 700; }
+    .card p  { font-size: 0.85rem; color: var(--muted); flex: 1; }
+    .card-link {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--green);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 4px;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how { background: #fff; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 28px;
+      counter-reset: step;
+    }
+    .step {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      counter-increment: step;
+    }
+    .step-num {
+      width: 40px; height: 40px;
+      background: var(--green);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1rem;
+    }
+    .step h3 { font-size: 0.95rem; font-weight: 700; }
+    .step p  { font-size: 0.85rem; color: var(--muted); }
+
+    /* ── PRIVACY ── */
+    .privacy {
+      background: linear-gradient(135deg, #f0fff8, #e6fffa);
+      border-top: 1px solid #c6f6e0;
+      border-bottom: 1px solid #c6f6e0;
+    }
+    .privacy-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .privacy-inner h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 12px; }
+    .privacy-inner p  { color: var(--muted); font-size: 0.95rem; }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: var(--green);
+      color: #fff;
+      text-align: center;
+      padding: 60px 24px;
+    }
+    .cta-band h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; }
+    .cta-band p  { opacity: 0.85; margin-bottom: 28px; font-size: 1rem; }
+    .cta-band a {
+      background: #fff;
+      color: var(--green);
+      padding: 14px 36px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .cta-band a:hover { opacity: 0.9; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1a202c;
+      color: #a0aec0;
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.82rem;
+    }
+    footer a { color: #68d391; text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      nav { padding: 12px 20px; }
+      .hero { padding: 52px 16px 44px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-logo" href="#">🧰 Excel<span>Toolbox</span></a>
+  <a class="nav-cta" href="https://exceltoolbox.streamlit.app/" target="_blank" rel="noopener">Open App →</a>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <h1>Free Online Tools for<br><span>Excel & Data Work</span></h1>
+  <p>Merge, split, VLOOKUP, find duplicates, convert JSON to Excel and more — directly in your browser. No sign-up. No limits.</p>
+  <div class="hero-badges">
+    <span class="badge">✅ No sign-up</span>
+    <span class="badge">🔒 Files never stored</span>
+    <span class="badge">⚡ Works in browser</span>
+    <span class="badge">🆓 100% free</span>
+  </div>
+  <a class="hero-btn" href="https://exceltoolbox.streamlit.app/" target="_blank" rel="noopener">
+    Open Excel Toolbox →
+  </a>
+  <p class="hero-sub">7 tools · No installation required</p>
+</header>
+
+<!-- ── TOOLS ── -->
+<section id="tools">
+  <div class="section-inner">
+    <p class="section-label">All Tools</p>
+    <h2 class="section-title">Everything you need for Excel & data</h2>
+    <p class="section-desc">Each tool follows a simple Upload → Configure → Download workflow so you always know exactly what's happening to your data.</p>
+
+    <div class="cards">
+
+      <a class="card" href="https://exceltoolbox.streamlit.app/" target="_blank" rel="noopener">
+        <div class="card-icon">🧩</div>
+        <span class="cat-badge cat-excel">Excel Tools</span>
+        <h3>Merge Excel</h3>
+        <p>Combine multiple Excel files — or all sheets inside one file — into a single spreadsheet in seconds.</p>
+        <span class="card-link">Open tool →</span>
+      </a>
+
+      <a class="card" href="https://exceltoolbox.streamlit.app/" target="_blank" rel="noopener">
+        <div class="card-icon">✂️</div>
+        <span class="cat-badge cat-excel">Excel Tools</span>
+        <h3>Split Excel</h3>
+        <p>Break a large file into smaller chunks by row count. Download all parts as a single ZIP file.</p>
+        <span class="card-link">Open tool →</span>
+      </a>
+
+      <a class="card" href="https://exceltoolbox.streamlit.app/" target="_blank" rel="noopener">
+        <div class="card-icon">🔗</div>
+        <span class="cat-badge cat-excel">Excel Tools</span>
+        <h3>VLOOKUP</h3>
+        <p>Match and pull columns across two spreadsheets by a shared key — like Excel VLOOKUP but without formula limits.</p>
+        <span class="card-link">Open tool →</span>
+      </a>
+
+      <a class="card" href="https://exceltoolbox.streamlit.app/" target="_blank" rel="noopener">
+        <div class="card-icon">🔍</div>
+        <span class="cat-badge cat-clean">Data Cleaning</span>
+        <h3>Find Duplicates</h3>
+        <p>Detect duplicate rows across selected columns and download a yellow-highlighted Excel file.</p>
+        <span class="card-link">Open tool →</span>
+      </a>
+
+      <a class="card" href="https://exceltoolbox.streamlit.app/" target="_blank" rel="noopener">
+        <div class="card-icon">🔄</div>
+        <span class="cat-badge cat-convert">Conversion Tools</span>
+        <h3>JSON ↔ Excel</h3>
+        <p>Convert JSON to Excel, Excel to JSON, pull live API data into a spreadsheet, or convert text files containing JSON.</p>
+        <span class="card-link">Open tool →</span>
+      </a>
+
+      <a class="card" href="https://exceltoolbox.streamlit.app/" target="_blank" rel="noopener">
+        <div class="card-icon">🔢</div>
+        <span class="cat-badge cat-clean">Data Cleaning</span>
+        <h3>Number Formatter</h3>
+        <p>Convert text-stored numbers to real numeric values so Excel formulas, filters, and pivot tables work correctly.</p>
+        <span class="card-link">Open tool →</span>
+      </a>
+
+      <a class="card" href="https://exceltoolbox.streamlit.app/" target="_blank" rel="noopener">
+        <div class="card-icon">🧩</div>
+        <span class="cat-badge cat-convert">Conversion Tools</span>
+        <h3>String Formatter</h3>
+        <p>Format a list of values as comma-separated, quoted, or SQL IN-clause strings. Perfect for SQL queries and API calls.</p>
+        <span class="card-link">Open tool →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how" id="how">
+  <div class="section-inner">
+    <p class="section-label">How it works</p>
+    <h2 class="section-title">Four steps to your result</h2>
+    <p class="section-desc">Every tool follows the same simple flow so there's nothing new to learn.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Upload your file</h3>
+        <p>Drag and drop or click to upload. Supports .xlsx and .json files.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Configure options</h3>
+        <p>Choose columns, row counts, output format — only what's relevant to the tool you're using.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Process</h3>
+        <p>Click the action button. Processing happens instantly in your browser session.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Download result</h3>
+        <p>Get your result file with a summary of what was done — rows processed, files created, columns matched.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRIVACY ── -->
+<section class="privacy" id="privacy">
+  <div class="privacy-inner">
+    <h2>🔒 Your files stay private</h2>
+    <p>
+      Every file you upload is processed entirely within your active browser session using
+      in-memory computation. Nothing is written to disk or sent to any server.
+      All data is automatically discarded the moment you close or refresh the tab.
+      There are no accounts, no tracking, and no storage of your data — ever.
+    </p>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-band">
+  <h2>Ready to get started?</h2>
+  <p>Open the toolbox and process your first file in under a minute.</p>
+  <a href="https://exceltoolbox.streamlit.app/" target="_blank" rel="noopener">Open Excel Toolbox →</a>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>© 2026 Excel Toolbox &nbsp;·&nbsp; Built with ❤️ using <a href="https://streamlit.io" target="_blank" rel="noopener">Streamlit</a> &nbsp;·&nbsp; <a href="https://exceltoolbox.streamlit.app/" target="_blank" rel="noopener">Launch App</a></p>
+  <p style="margin-top:8px;">Free online Excel tools · Merge Excel · Split Excel · VLOOKUP · Find Duplicates · JSON to Excel · Number Formatter</p>
+</footer>
+
+</body>
+</html>
